@@ -2,7 +2,7 @@
 
 The MNIST handwritten digit database is a very popular dataset for testing machine learning algorithms. It contains 60,000 labeled training examples and 10,0000 examples for testing. The dataset can be downloaded from [here](http://yann.lecun.com/exdb/mnist/). This repository contains a file created from this dataset which can easily be read with Octave or MATLAB. 
 
-Either you can use this file directly or you can create it on your own.
+Either you can use this file directly or you can create it with the `mnist.py` Python script contained in this repository.
 
 ## Using the dataset directly in Ocatve/MATLAB
 
