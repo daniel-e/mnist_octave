@@ -1,10 +1,10 @@
 # Loading MNIST handwritten digit database with Octave or MATLAB
 
-The MNIST handwritten digit database is a very popular dataset for testing machine learning algorithms. It contains 60,000 labeled training examples and 10,0000 examples for testing. The dataset can be downloaded from [here](http://yann.lecun.com/exdb/mnist/). This repository contains a file created from this dataset which can easily be read with Octave or MATLAB. 
+The MNIST handwritten digit database is a very popular data set for testing machine learning algorithms. It contains 60,000 labeled training examples and 10,000 examples for testing. The data set can be downloaded from [here](http://yann.lecun.com/exdb/mnist/). This repository contains a file `mnist.mat` created from this data set which can easily be loaded with Octave or MATLAB. 
 
 Either you can use this file directly or you can create it with the `mnist.py` Python script contained in this repository.
 
-## Using the dataset directly in Ocatve/MATLAB
+## Loading the data set directly in Ocatve/MATLAB
 
 Download the file:
 
@@ -31,17 +31,17 @@ image(i);
 ```
 
 
-## Create an Octave/MATLAB file from the raw dataset
+## Create an Octave/MATLAB file from the raw data set
 
 If you want to build the `mnist.mat` file on your own just follow the following steps:
 
 First, you require some Python packages. This step is optional if you already have all packages installed. You can either install the required packages directly into your system with `pip` or you can create a virtual environment into which the packages are installed.
 
-*Install packages directly*
+**Install packages directly**
 
     pip3 install scipy numpy matplotlib
 
-*Install the packages into a virtual environment*
+**Install the packages into a virtual environment**
 
     virtualenv -p python3 venv
     # activate the virtual environment
@@ -50,16 +50,16 @@ First, you require some Python packages. This step is optional if you already ha
     pip3 install scipy numpy matplotlib
 
 
-*Download the data*
+**Download the raw data set**
 
-If you cloned the GitHub repository this step is optional as the repository already contains the files. If you haven't cloned it you have to download the dataset from http://yann.lecun.com/exdb/mnist/.
+If you cloned the GitHub repository this step is optional as the repository already contains the files. If you haven't cloned it you have to download the data set from http://yann.lecun.com/exdb/mnist/.
 
     wget http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-*Execute mnist.py to create a matrix for Octave and MATLAB.*
+**Execute mnist.py to create a matrix for Octave and MATLAB.**
 
     ./mnist.py
 
