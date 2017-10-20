@@ -37,11 +37,11 @@ If you want to build the `mnist.mat` file on your own just follow the following 
 
 First, you require some Python packages. This step is optional if you already have all packages installed. You can either install the required packages directly into your system with `pip` or you can create a virtual environment into which the packages are installed.
 
-1a) Install packages directly
+*Install packages directly*
 
     pip3 install scipy numpy matplotlib
 
-1b) Install the packages into a virtual environment
+*Install the packages into a virtual environment*
 
     virtualenv -p python3 venv
     # activate the virtual environment
@@ -50,7 +50,7 @@ First, you require some Python packages. This step is optional if you already ha
     pip3 install scipy numpy matplotlib
 
 
-2) Download the data
+*Download the data*
 
 If you cloned the GitHub repository this step is optional as the repository already contains the files. If you haven't cloned it you have to download the dataset from http://yann.lecun.com/exdb/mnist/.
 
@@ -59,7 +59,7 @@ If you cloned the GitHub repository this step is optional as the repository alre
     wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-3) Execute mnist.py to create a matrix for Octave and MATLAB.
+*Execute mnist.py to create a matrix for Octave and MATLAB.*
 
     ./mnist.py
 
