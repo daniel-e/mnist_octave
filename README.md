@@ -4,7 +4,7 @@ The MNIST handwritten digit database is a very popular data set for testing mach
 
 Either you can use this file directly or you can create it with the `mnist.py` Python script contained in this repository.
 
-## Loading the data set directly in Ocatve/MATLAB
+## Loading the data set directly in Octave/MATLAB
 
 Download the file:
 
