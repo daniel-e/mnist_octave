@@ -4,7 +4,7 @@ The MNIST handwritten digit database is a very popular dataset for testing machi
 
 Either you can use this file directly or you can create it on your own.
 
-## Direct 
+## Using the dataset directly in Ocatve/MATLAB
 
 Download the file:
 
@@ -22,7 +22,7 @@ Now, `d` is a struct which contains the training and testing examples with the c
 * `d.testX` is a (10000,784) matrix which contains the pixel data for testing
 * `d.testY` is a (1,10000) matrix which contains the labels for the test set
 
-You can display a single example as follows:
+You could now display a single example. For example, to display the third example of the training set type the following:
 
 ```matlab
 X = d.trainX;
@@ -31,7 +31,7 @@ image(i);
 ```
 
 
-## Create the dataset from the raw dataset
+## Create an Octave/MATLAB file from the raw dataset
 
 If you want to build the `mnist.mat` file on your own just follow the following steps:
 
@@ -48,6 +48,7 @@ First, you require some Python packages. This step is optional if you already ha
     source venv/bin/activate
     pip3 install --upgrade pip
     pip3 install scipy numpy matplotlib
+
 
 2) Download the data
 
