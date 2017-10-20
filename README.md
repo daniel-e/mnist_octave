@@ -1,60 +1,66 @@
-## Checkout the repository
+# Loading MNIST handwritten digit database with Octave or MATLAB
 
-    git clone XXX
+The MNIST handwritten digit database is a very popular dataset for testing machine learning algorithms. It contains 60,000 labeled training examples and 10,0000 examples for testing. The dataset can be downloaded from [here](http://yann.lecun.com/exdb/mnist/). This repository contains a file created from this dataset which can easily be read with Octave or MATLAB. 
 
-## Load data with Octave
+Either you can use this file directly or you can create it on your own.
 
-Start Octave.
+## Direct 
+
+Download the file:
+
+    wget https://github.com/daniel-e/mnist_octave/raw/master/mnist.mat
+
+Start Octave and type:
 
 ```matlab
-d=load('mnist.mat');
+d = load('mnist.mat');
+```
 
-  # d.trainX  is a (60000,784) matrix which
-  #           contains the pixel data for training
-  # d.trainY  is a (1,60000) matrix which
-  #           contains the labels for the training data
-  # d.testX   is a (10000,784) matrix which
-  #           contains the pixel data for testing
-  # d.testY   is a (1,10000) matrix which
-  #           contains the labels for the test set
+Now, `d` is a struct which contains the training and testing examples with the corresponding labels:
+* `d.trainX` is a (60000,784) matrix which contains the pixel data for training
+* `d.trainY` is a (1,60000) matrix which contains the labels for the training data
+* `d.testX` is a (10000,784) matrix which contains the pixel data for testing
+* `d.testY` is a (1,10000) matrix which contains the labels for the test set
 
-X=d.trainX;
-i=reshape(X(3,:), 28,28)';
+You can display a single example as follows:
+
+```matlab
+X = d.trainX;
+i = reshape(X(3,:), 28, 28)';
 image(i);
 ```
 
 
-## Setup an environment
+## Create the dataset from the raw dataset
 
-This is optional if you already have all packages installed. You can either install the required packages directly on your system with pip or you can create a virtual environment into which the packages are installed.
+If you want to build the `mnist.mat` file on your own just follow the following steps:
 
-### Install packages directly
+First, you require some Python packages. This step is optional if you already have all packages installed. You can either install the required packages directly into your system with `pip` or you can create a virtual environment into which the packages are installed.
+
+1a) Install packages directly
 
     pip3 install scipy numpy matplotlib
 
-### Install the packages into a virtual environment
+1b) Install the packages into a virtual environment
 
     virtualenv -p python3 venv
+    # activate the virtual environment
     source venv/bin/activate
     pip3 install --upgrade pip
     pip3 install scipy numpy matplotlib
 
-## Download the data (optional)
+2) Download the data
 
-If you clone the GitHub repository this step is optional.
-
-Download the data from http://yann.lecun.com/exdb/mnist/
+If you cloned the GitHub repository this step is optional as the repository already contains the files. If you haven't cloned it you have to download the dataset from http://yann.lecun.com/exdb/mnist/.
 
     wget http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
     wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-## Execute mnist.py to create a matrix for Octave
+3) Execute mnist.py to create a matrix for Octave and MATLAB.
 
     ./mnist.py
 
-A new file `mnist.mat` is created which contains the data. This matrix can be loaded with Octave (see above).
-
-
+A new file `mnist.mat` is created which contains the data. This matrix can now be loaded with Octave or MATLAB as described above.
 
